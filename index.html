@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<style>
+    .app-container{
+        text-align: center;
+    }
+    .input-text{
+        width: 70%;
+        display: block;
+        margin: 10px auto;
+        height: 80px;
+        border: 2px solid black;
+    }
+    .button-container{
+        display: flex;
+        justify-content: space-around;
+    }
+    .result-text{
+        display: block;
+        width: 70%;
+        margin: 10px auto;
+        height: 100px;
+
+    }
+</style>
+<body>
+    <h1 class="app-container">Text Tool</h1>
+    <input type="text" class="input-text" id="input-text" />
+    <p id="result-text" class="result-text">
+
+    </p>
+
+    <div class="button-container">
+        <button class="action-button" onclick="makeupperCase()" >UPPERCASE</button>
+        <button class="action-button" onclick="makelowerCase()">lowercase</button>
+        <button class="action-button" onclick="charCount()">Character Count</button>
+        <button class="action-button">Word Count</button>
+
+
+
+    </div>
+
+    <script>
+        function makeupperCase(){
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result-text")
+
+            resultElement.innerText = inputElement.value.toUpperCase()
+        }
+
+        function makelowerCase(){
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result-text")
+
+            resultElement.innerText = inputElement.value.toLowerCase()
+        }
+
+        function charCount(){
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result-text")
+
+            resultElement.innerText = `Total Characters: ${inputElement.value.length}`
+
+        }
+    </script>
+
+</body>
+</html>
