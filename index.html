@@ -6,6 +6,9 @@
     <title>DOM</title>
 </head>
 <style>
+    body{
+        background-color: cornflowerblue;
+    }
     .app-container{
         text-align: center;
     }
@@ -27,9 +30,16 @@
         height: 100px;
 
     }
+    .action-button{
+        background-color: rgb(76, 181, 246);
+        border: 1px solid black;
+        width: 100px;
+        padding: 10px 10px;
+
+    }
 </style>
 <body>
-    <h1 class="app-container">Text Tool</h1>
+    <h1 class="app-container">Text Operations</h1>
     <input type="text" class="input-text" id="input-text" />
     <p id="result-text" class="result-text">
 
@@ -39,7 +49,7 @@
         <button class="action-button" onclick="makeupperCase()" >UPPERCASE</button>
         <button class="action-button" onclick="makelowerCase()">lowercase</button>
         <button class="action-button" onclick="charCount()">Character Count</button>
-        <button class="action-button">Word Count</button>
+        <button class="action-button" onclick="wordCount()">Word Count</button>
 
 
 
@@ -51,6 +61,7 @@
             const resultElement = document.getElementById("result-text")
 
             resultElement.innerText = inputElement.value.toUpperCase()
+            resultElement.style.color="white"
         }
 
         function makelowerCase(){
@@ -58,6 +69,8 @@
             const resultElement = document.getElementById("result-text")
 
             resultElement.innerText = inputElement.value.toLowerCase()
+            resultElement.style.color="white"
+
         }
 
         function charCount(){
@@ -65,6 +78,17 @@
             const resultElement = document.getElementById("result-text")
 
             resultElement.innerText = `Total Characters: ${inputElement.value.length}`
+            resultElement.style.color="white"
+
+
+        }
+        function wordCount(){
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result-text") 
+
+            resultElement.innerText = `Total Words: ${inputElement.value.split(' ').length}`
+            resultElement.style.color="white"
+
 
         }
     </script>
